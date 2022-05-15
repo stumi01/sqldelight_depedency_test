@@ -1,0 +1,24 @@
+CREATE TABLE AlmostBreed (
+id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+name TEXT NOT NULL UNIQUE,
+favorite INTEGER AS Boolean NOT NULL DEFAULT 0
+);
+
+selectAll:
+SELECT * FROM AlmostBreed;
+
+selectById:
+SELECT * FROM AlmostBreed WHERE id = ?;
+
+selectByName:
+SELECT * FROM AlmostBreed WHERE name = ?;
+
+insertBreed:
+INSERT OR IGNORE INTO AlmostBreed(name)
+VALUES (?);
+
+deleteAll:
+DELETE FROM AlmostBreed;
+
+updateFavorite:
+UPDATE AlmostBreed SET favorite = ? WHERE id = ?;
